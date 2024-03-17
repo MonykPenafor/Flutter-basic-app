@@ -41,3 +41,14 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+
+
+# Ignore unnecessary directories
+/android/
+/build/
+/ios/
+/linux/
+/macos/
+/test/
+/windows/
