@@ -5,6 +5,12 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder(child: Center(child: Text('profile')),);
+    return Container(
+      color: Color.fromARGB(255, 154, 214, 216),
+      child: Center(
+        child: Text('profile'),
+        
+        
+    ),);
   }
 }

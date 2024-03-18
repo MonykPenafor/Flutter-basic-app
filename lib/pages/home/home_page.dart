@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder(child: Center(child: Text('home')),);
+    return Container(
+      color: const Color.fromARGB(255, 142, 170, 135),
+      child: Center(
+        child: Column(children: [
+          Container(
+            height: 200,
+          ),
+          
+        ],),
+      ),
+    );
   }
 }

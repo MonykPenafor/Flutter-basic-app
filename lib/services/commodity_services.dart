@@ -5,10 +5,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CommodityServices{
   //obter uma referencia do firebase (cloudstore)
-  FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   
   // obtendo a referencia da coleção commodities no firebase
-  CollectionReference _collectionRef = FirebaseFirestore.instance.collection('commodities');
+  final CollectionReference _collectionRef = FirebaseFirestore.instance.collection('commodities');
 
   //metodo para salvar/persistir dados no firebase
   addCommodity(Commodity commodity){
@@ -20,6 +20,23 @@ class CommodityServices{
   addCommodity2(Commodity commodity){
     _collectionRef.add(commodity.toJson());
   }
+
+
+  addCommodity3(Map<String, dynamic> commodity, String id) async {
+    return await _firestore.collection('commodities').doc(id).set(commodity);
+  }
+
+  //OBTENDO DADOS NO FIREBASE
+
+  Stream<QuerySnapshot> getCommodities(){
+    return FirebaseFirestore.instance.collection('commodities').orderBy('name').snapshots();
+  }
+
+
+
+
+
+
 
 
 }
